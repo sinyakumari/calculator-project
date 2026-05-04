@@ -19,7 +19,6 @@ int main(){
     printf("exiting calculator..\nThank you");
         exit(0);
     }
-   
 
     printf("\nenter the values a and b");
     scanf("%d%d",&a,&b);
@@ -36,7 +35,7 @@ int main(){
         break;
         case 4:
         if(b==0)  {
-          printf("\ndivision with zero is not allow");
+          printf("\ndivision with zero is not allow\n");
           break;
         }
         else {
@@ -45,7 +44,7 @@ int main(){
         break; }
         case 5:
         if(b==0)  {
-            printf("\nremainder with zero is not allow");
+            printf("\nremainder with zero is not allow\n");
             break;
           }
           else {
