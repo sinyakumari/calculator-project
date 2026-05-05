@@ -1,60 +1,41 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
 
-int main(){
-    int a,b, choice;
-    float result;
-    while(1){
-    printf("\nCALCULATOR"); 
-    printf("\n1.Addition");  
-    printf("\n2.subtraction");
-    printf("\n3.multiplication");
-    printf("\n4.division");
-    printf("\n5.remainder");
-    printf("\n6.exit");
-    printf("\nenter your choice");
-    scanf("%d",&choice);
+int main() {
+    float num1, num2;
+    char op;
 
-    if(choice==6){
-    printf("exiting calculator..\nThank you");
-        exit(0);
-    }
-   
+    printf("Enter first number: ");
+    scanf("%f", &num1);
 
-    printf("\nenter the values a and b");
-    scanf("%d%d",&a,&b);
+    printf("Enter operator (+, -, *, /): ");
+    scanf(" %c", &op);  // space before %c is important
 
-    switch(choice) {
-        case 1: 
-           printf("\naddition is %d",a+b);
-           break;
-        case 2 :
-        printf("\nsubtraction is %d",a-b);
-        break;
-        case 3: 
-        printf("\nmultiplication is %d",a*b);
-        break;
-        case 4:
-        if(b==0)  {
-          printf("\ndivision with zero is not allow");
-          break;
-        }
-        else {
-            result=(float)a/b;
-        printf("\ndivision is %.2f",result);
-        break; }
-        case 5:
-        if(b==0)  {
-            printf("\nremainder with zero is not allow");
+    printf("Enter second number: ");
+    scanf("%f", &num2);
+
+    switch(op) {
+        case '+':
+            printf("Result = %.2f", num1 + num2);
             break;
-          }
-          else {
-         printf("\nremainder is %d",a%b);
-         break;
-         } 
-        default :
-        printf("invalid options are chosen");
+
+        case '-':
+            printf("Result = %.2f", num1 - num2);
+            break;
+
+        case '*':
+            printf("Result = %.2f", num1 * num2);
+            break;
+
+        case '/':
+            if (num2 != 0)
+                printf("Result = %.2f", num1 / num2);
+            else
+                printf("Error: Division by zero!");
+            break;
+
+        default:
+            printf("Invalid operator!");
     }
-}
+
     return 0;
 }
